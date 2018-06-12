@@ -1,0 +1,32 @@
+{
+  "name": "pharmacy-backend",
+  "version": "1.0.0",
+  "description": "Backend for AF pharmacy system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sliit-koombiyo/pharmacy-backend.git"
+  },
+  "author": "koombiyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sliit-koombiyo/pharmacy-backend/issues"
+  },
+  "homepage": "https://github.com/sliit-koombiyo/pharmacy-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "engines": {
+    "node": "9.4.0"
+  }
+}
