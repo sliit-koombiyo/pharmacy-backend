@@ -8,4 +8,4 @@ const PrescriptionItemSchema = new Schema({
     quantity: Number
 });
 
-module.exports = mongoose.model('Prescription', PrescriptionItemSchema);
+module.exports = mongoose.model('PrescriptionItem', PrescriptionItemSchema);
