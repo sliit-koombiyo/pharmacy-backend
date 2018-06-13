@@ -16,7 +16,7 @@ mongoose.connection.once('open', function() {
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/', router);
-// default route
+// default not found route
 router.use('/', (req, res)  => {
     res.status(404).send("Sorry Koombiyo-Pharmacy couldn't find that page");
 });
