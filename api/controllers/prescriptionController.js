@@ -5,5 +5,5 @@ module.exports.addPrescription = (prescription) => {
     }
 
 module.exports.getPrescriptions = () => {
-        return Prescription.find({});
+        return Prescription.find({}).populate('prescriptionItems.drug');
     }

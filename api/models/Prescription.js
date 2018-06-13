@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const PrescriptionItemSchema = new Schema({
     drug: {
         type: Schema.Types.ObjectId,
-        required: [true, 'drug name is required']
+        required: [true, 'drug name is required'],
+        ref: 'drug'
     },
     dosage: Number,
     frequency: String,

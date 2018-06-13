@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const prescriptions = require('./prescriptions');
 const drugs = require('./drugs');
+const stocks = require('./stocks');
 
 router.use('/prescriptions', prescriptions);
 router.use('/drugs', drugs);
