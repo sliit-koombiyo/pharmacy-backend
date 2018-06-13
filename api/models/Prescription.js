@@ -2,18 +2,30 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PrescriptionItemSchema = new Schema({
-    drug: Schema.Types.ObjectId,
+    drug: {
+        type: Schema.Types.ObjectId,
+        required: [true, 'drug name is required']
+    },
     dosage: Number,
-    frequencty: String,
+    frequency: String,
     quantity: Number
 });
 
 const PrescriptionSchema = new Schema({
-    prescriptionID: Number,
-    createdDate: Date,
+    prescriptionID: {
+        type: Number,
+        required: [true, 'prescription ID is required']
+    },
     prescribedDate: Date,
     prescriptionItems: [PrescriptionItemSchema],
-    patientID: Number
-});
+    patientID: {
+        type: Number,
+        required: [true, 'patient ID is required']
+    },
+    patientName: {
+        type: String,
+        required: [true, 'patient ID is required']
+    }
+}, {timestamps: true});
 
 module.exports = mongoose.model('Prescription', PrescriptionSchema);
