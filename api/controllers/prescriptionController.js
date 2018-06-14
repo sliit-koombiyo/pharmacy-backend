@@ -28,7 +28,7 @@ module.exports.dispense = (prescription) => {
             } else { 
                 callback(null, res);
             }
-        )
+         } )
         if(prescription.prescriptionItems){
             resolve(prescription.prescriptionItems);
         } else {
