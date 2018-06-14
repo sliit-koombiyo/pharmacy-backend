@@ -6,10 +6,8 @@ const RequestSchema= new Schema({
     drugName:String,
     requestedQuantity:Number,
     availableQuantity:Number,
-    date:Date,
-    orderQuantity : Number,
-    deliveredQuantity : String,
-    amount: Number
+    department : String,
+    date:Date
 });
 
 module.exports = mongoose.model('Requests',RequestSchema);
