@@ -3,17 +3,17 @@ const DrugModal = require('../models/Drug');
 var DrugController = function(){
     this.addDrug = (data)=>{
         return new Promise((resolve,reject)=>{
-            var drug = new DrugModal({
-                drugID=data.drugID,
-                supplier=data.supplier,
-                name=data.name,
-                stock=data.stock,
-                type=data.type,
-                price=data.price,
-                dangerlevel=data.dangerlevel,
-                reorderLevel=data.reorderLevel
+            var drug= new DrugModal({
+                drugID:data.drugID,
+                supplier:data.supplier,
+                name:data.name,
+                stock:data.stock,
+                type:data.type,
+                price:data.price,
+                dangerlevel:data.dangerlevel,
+                reorderLevel:data.reorderLevel
             });
-            drug.save.then(()=>{
+            drug.save().then(()=>{
                 resolve({status: 200, message: "Succesfully added new drug"});
             }).catch(err => {
                 reject({status: 500, message: "Error:- "+err});
