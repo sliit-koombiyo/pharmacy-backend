@@ -2,9 +2,9 @@ const GRNModal = require('../models/GoodReceivedNotes');
 
 var GRNController = function(){
     this.addGRN = (data)=>{
-        return new Promise = ((resolve,reject)=>{
+        return new Promise((resolve,reject)=>{
             var GRN = new GRNModal({
-                noteID=data.noteID,
+                noteID:data.noteID,
                 supplier: data.supplier,
                 date:data.date,
                 orderQuantity :data.orderQuantity,
@@ -38,7 +38,7 @@ var GRNController = function(){
     }
 }
 
-module.exports = new DrugController();
+module.exports = new GRNController();
 
 
 
