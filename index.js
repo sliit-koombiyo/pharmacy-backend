@@ -16,6 +16,7 @@ mongoose.connection.once('open', function() {
 
 app.use(bodyParser.json());
 app.use(cors());
+app.options('*', cors());
 
 app.use('/', router);
 
