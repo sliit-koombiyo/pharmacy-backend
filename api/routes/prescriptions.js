@@ -11,7 +11,7 @@ router.post('/', (req, res, next) => {
 router.post('/dispense', (req, res, next) => {
     prescriptionController.dispense(req.body)
         .then((message) => {
-            res.send(message);
+            res.send({status: 200, message: message});
         }).catch(next);
 });
 
