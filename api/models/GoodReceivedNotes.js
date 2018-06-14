@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const GoodReceivedNotesSchema= new Schema({
     noteID: Number,
+    supplier:String,
     orderQuantity : Number,
-    deliveredQuantity : String,
-    amount: Number,
-    date:Date
+    deliveredQuantity : Number,
+    amount: Number
 });
 
 module.exports = mongoose.model('GoodReceivedNotes',GoodReceivedNotesSchema);
