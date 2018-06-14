@@ -9,7 +9,8 @@ const DrugSchema= new Schema({
     type : String,
     price : Number,
     dangerlevel : Number,
-    reorderLevel :Number
+    reorderLevel :Number,
+    category:String
 });
 
 module.exports = mongoose.model('Drug',DrugSchema);
