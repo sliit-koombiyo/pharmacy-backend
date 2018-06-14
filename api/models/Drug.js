@@ -13,3 +13,4 @@ const DrugSchema= new Schema({
 });
 
 module.exports = mongoose.model('Drug',DrugSchema);
+
