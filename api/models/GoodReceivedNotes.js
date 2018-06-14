@@ -11,3 +11,5 @@ const GoodReceivedNotesSchema= new Schema({
 });
 
 module.exports = mongoose.model('GoodReceivedNotes',GoodReceivedNotesSchema);
+
+
