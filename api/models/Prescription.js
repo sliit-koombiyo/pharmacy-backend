@@ -3,20 +3,16 @@ const Schema = mongoose.Schema;
 
 const PrescriptionItemSchema = new Schema({
     drug: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: [true, 'drug name is required'],
-        ref: 'drug'
     },
     dosage: Number,
     frequency: String,
+    duration: String,
     quantity: Number
 });
 
 const PrescriptionSchema = new Schema({
-    prescriptionID: {
-        type: Number,
-        required: [true, 'prescription ID is required']
-    },
     prescribedDate: Date,
     prescriptionItems: [PrescriptionItemSchema],
     patientID: {
@@ -25,7 +21,7 @@ const PrescriptionSchema = new Schema({
     },
     patientName: {
         type: String,
-        required: [true, 'patient ID is required']
+        required: [true, 'patient Name is required']
     }
 }, {timestamps: true});
 

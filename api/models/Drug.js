@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const DrugSchema= new Schema({
     drugID: Number,
-    supplier: [Schema.Types.ObjectId],
+    supplier: {type: Schema.Types.ObjectId, ref: 'supplier'},
     name:String,
     stock : Number,
     type : String,

@@ -2,7 +2,7 @@ const DrugModal = require('../models/Drug');
 
 var DrugController = function(){
     this.addDrug = (data)=>{
-        return new Promise = ((resolve,reject)=>{
+        return new Promise((resolve,reject)=>{
             var drug = new DrugModal({
                 drugID=data.drugID,
                 supplier=data.supplier,
