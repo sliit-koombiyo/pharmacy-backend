@@ -32,15 +32,14 @@ var DrugBatchController = function(){
         drugBatch.find().populate('Drug').exec().then((batch)=>{
             resolve({status: 200, data: batch});
         }).catch(err => {
-            reject({status: 500, message: "Error:- " + err});
+            reject({status: 500, message: "Cant find Error:- " + err});
         });
-    })
+    });
 }
     
-
     this.findABatch = (id)=>{
         return new Promise((resolve, reject) => {
-            drugBatch.find({_id:id}).exec().then((batch)=>{
+            drugBatch.find({_id:id}).populate('Drug').exec().then((batch)=>{
                 resolve({status: 200, data: batch});
             }).catch(err => {
                 reject({status: 500, message: "Error:- " + err});
