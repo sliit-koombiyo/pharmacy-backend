@@ -6,6 +6,7 @@ const PrescriptionItemSchema = new Schema({
         type: String,
         required: [true, 'drug name is required'],
     },
+    price: Number,
     dosage: Number,
     frequency: String,
     duration: String,
@@ -14,6 +15,7 @@ const PrescriptionItemSchema = new Schema({
 
 const PrescriptionSchema = new Schema({
     prescribedDate: Date,
+    dispensed: {type: Boolean, default: false},
     prescriptionItems: [PrescriptionItemSchema],
     patientID: {
         type: Number,

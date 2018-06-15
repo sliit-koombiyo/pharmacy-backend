@@ -6,7 +6,6 @@ var GRNController = function(){
             var GRN = new GRNModal({
                 noteID:data.noteID,
                 supplier: data.supplier,
-                date:data.date,
                 orderQuantity :data.orderQuantity,
                 deliveredQuantity :data.deliveredQuantity,
                 amount: data.amount
@@ -21,7 +20,7 @@ var GRNController = function(){
 
     this.GetAllGRN = ()=>{
         return new Promise((resolve, reject) => {
-        GRNModal.find().exec().then((GRN)=>{
+        GRNModal.find({}).exec().then((GRN)=>{
             resolve({status: 200, data: GRN});
         }).catch(err => {
             reject({status: 500, message: "Error:- " + err});
