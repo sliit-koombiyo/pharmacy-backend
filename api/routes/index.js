@@ -11,7 +11,7 @@ router.use('/prescriptions', prescriptions);
 router.use('/drugs', drugs);
 router.use('/grn',grn);
 router.use('/orders',orders);
-router.use('./requests',requests);
+router.use('/requests',requests);
 router.use('/drugsBatch',drugBatch);
 
 
