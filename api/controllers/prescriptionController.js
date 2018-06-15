@@ -5,8 +5,12 @@ module.exports.addPrescription = (prescription) => {
     return Prescription.create(prescription);
 }
 
-module.exports.getPrescriptions = () => {
-    return Prescription.find({});
+module.exports.getPrescriptions = (undispensed) => {
+    if(undispensed) {
+        return Prescription.find({dispensed: false});
+    } else {
+        return Prescription.find({});
+    }
 }
 
 module.exports.getPrescriptionsByName = (name) => {
@@ -30,8 +34,12 @@ module.exports.dispense = (prescription) => {
                     reject(err);
                 });
             });
-
-            resolve("result OK");
+            Prescription.findByIdAndUpdate(prescription._id, {dispensed:true}, {new:true}).then((result)=>{
+                console.log(result)
+                resolve("result OK : " + result);
+            }).catch((err)=>{
+                reject(err)    
+            });
         } else {
             reject(new Error('error: could not find prescription items'));
         }
