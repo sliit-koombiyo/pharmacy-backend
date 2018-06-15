@@ -2,7 +2,11 @@ const GRNModal = require('../models/GoodReceivedNotes');
 
 var GRNController = function(){
     this.addGRN = (data)=>{
+<<<<<<< HEAD
         return new Promise ((resolve,reject)=>{
+=======
+        return new Promise((resolve,reject)=>{
+>>>>>>> 77ecb4de80a535f1438fff1d87d9e36a1153c4e0
             var GRN = new GRNModal({
                 noteID:data.noteID,
                 supplier: data.supplier,

@@ -8,6 +8,13 @@ router.post('/', (req, res, next) => {
         }).catch(next);
 });
 
+router.post('/dispense', (req, res, next) => {
+    prescriptionController.dispense(req.body)
+        .then((message) => {
+            res.send({status: 200, message: message});
+        }).catch(next);
+});
+
 router.get('/', (req, res, next) => {
     if (req.query.patientID) {
         prescriptionController.getPrescriptionsByPatientID(req.query.patientID)

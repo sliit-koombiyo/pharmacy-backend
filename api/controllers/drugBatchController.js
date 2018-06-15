@@ -29,7 +29,7 @@ var DrugBatchController = function(){
 
     this.GetAllDrugsbatch = ()=>{
         return new Promise((resolve,reject)=>{
-        drugBatch.find().exec().then((batch)=>{
+        drugBatch.find().populate('Drug').exec().then((batch)=>{
             resolve({status: 200, data: batch});
         }).catch(err => {
             reject({status: 500, message: "Error:- " + err});
