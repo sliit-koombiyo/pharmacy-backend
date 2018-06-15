@@ -2,16 +2,23 @@ const router = require('express').Router();
 const goodReceivedNotesController = require('../controllers/goodReceivedNotesController');
 
 router.post('/', (req, res, next)=>{
-    goodReceivedNotesController.addgoodReceivedNotes(req.body)
+    goodReceivedNotesController.addGRN(req.body)
     .then((newgoodReceivedNotes)=>{
         res.send(newgoodReceivedNotes);
     }).catch(next);
 });
 
 router.get('/', (req, res, next)=>{
-    goodReceivedNotesController.getgoodReceivedNotes()
+    goodReceivedNotesController.GetAllGRN()
     .then((goodReceivedNotes)=>{
         res.send(goodReceivedNotes);
+    }).catch(next);
+});
+
+router.delete('/:id', (req, res, next)=>{
+    drugController.DeleteAGRN(req.params.id)
+    .then((newgoodReceivedNotes)=>{
+        res.send(newgoodReceivedNotes);
     }).catch(next);
 });
 
