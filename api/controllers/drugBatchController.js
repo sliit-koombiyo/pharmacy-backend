@@ -5,7 +5,7 @@ var DrugBatchController = function(){
         return new Promise ((resolve,reject)=>{
             var drugBatch = new DrugBatchModal({
                 batchID:data.batchID,
-                drug:data.drug,
+                drugID:data.drugID,
                 expiryDate:data.expiryDate,
                 batchQuntity:data.batchQuntity,
             });
