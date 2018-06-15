@@ -23,7 +23,7 @@ var DrugController = function () {
 
     this.UpdateDrug = (id, data) => {
         return new Promise((resolve, reject) => {
-            DrugModal.update({ _id: id }, data).then(() => {
+            DrugModal.update({ drugID: id }, data).then(() => {
                 resolve({ status: 200, message: "succesfully updated the drug" });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });

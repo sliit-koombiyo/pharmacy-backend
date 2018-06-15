@@ -19,7 +19,7 @@ var DrugBatchController = function(){
 
     this.UpdateDrugbatch = (id,data)=>{
         return new Promise((resolve,reject)=>{
-            drugBatch.update({_id:id},data).then(()=>{
+            DrugBatchModal.update({_id:id},data).then(()=>{
                     resolve({status: 200, message: "succesfully updated the drugbatch"});
                 }).catch(err => {
                     reject({status: 500, message: "Error:- " + err});
@@ -29,7 +29,7 @@ var DrugBatchController = function(){
 
     this.GetAllDrugsbatch = ()=>{
         return new Promise((resolve,reject)=>{
-        drugBatch.find().populate('Drug').exec().then((batch)=>{
+            DrugBatchModal.find().populate('Drug').exec().then((batch)=>{
             resolve({status: 200, data: batch});
         }).catch(err => {
             reject({status: 500, message: "Cant find Error:- " + err});
@@ -39,7 +39,7 @@ var DrugBatchController = function(){
     
     this.findABatch = (id)=>{
         return new Promise((resolve, reject) => {
-            drugBatch.find({_id:id}).populate('Drug').exec().then((batch)=>{
+            DrugBatchModal.find({_id:id}).populate('Drug').exec().then((batch)=>{
                 resolve({status: 200, data: batch});
             }).catch(err => {
                 reject({status: 500, message: "Error:- " + err});
@@ -49,7 +49,7 @@ var DrugBatchController = function(){
 
     this.DeleteABatch = (id)=>{
         return new Promise((resolve, reject) => {
-            drugBatch.remove({_id:id}).then(()=>{
+            DrugBatchModal.remove({_id:id}).then(()=>{
                 resolve({status: 200, message: "Successfullt deleted the batch"});
             }).catch(err => {
                 reject({status: 500, message:"Error:- " + err});
