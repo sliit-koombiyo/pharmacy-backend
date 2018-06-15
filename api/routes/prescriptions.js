@@ -26,7 +26,7 @@ router.get('/', (req, res, next) => {
             .then((prescriptions) => {
                 res.send(prescriptions);
             }).catch(next);
-    } else if (req.query.dispensed == false) {
+    } else if (req.query.undispensed) {
         prescriptionController.getPrescriptions(true)
             .then((prescriptions) => {
                 res.send(prescriptions);
