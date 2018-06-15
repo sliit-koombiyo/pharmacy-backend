@@ -16,7 +16,7 @@ router.get('/', (req, res, next)=>{
 });
 
 router.delete('/:id', (req, res, next)=>{
-    drugController.DeleteAGRN(req.params.id)
+    goodReceivedNotesController.DeleteAGRN(req.params.id)
     .then((newgoodReceivedNotes)=>{
         res.send(newgoodReceivedNotes);
     }).catch(next);
