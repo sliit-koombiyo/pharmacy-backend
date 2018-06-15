@@ -6,7 +6,7 @@ const OrderSchema= new Schema({
     from: String,
     to:String,
     subject : String,
-    conotent:String
+    content:String
    
 });
 

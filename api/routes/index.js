@@ -1,11 +1,17 @@
 const router = require('express').Router();
+
 const prescriptions = require('./prescriptions');
 const drugs = require('./drugs');
-const stocks = require('./stocks');
+const grn =require('./goodReceivedNotes');
+const orders= require('./orders');
+const requests=require('./requests');
 
 router.use('/prescriptions', prescriptions);
 router.use('/drugs', drugs);
-router.use('/stocks', stocks);
+router.use('/grn',grn);
+router.use('/orders',orders);
+router.use('./requests',requests);
+
 
 // default route
 router.use('/', (req, res)  => {

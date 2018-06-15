@@ -1,4 +1,4 @@
-const GRNModal = require('../models/Drug');
+const GRNModal = require('../models/GoodReceivedNotes');
 
 var GRNController = function(){
     this.addGRN = (data)=>{
