@@ -42,11 +42,7 @@ var DrugController = function () {
 
     this.findADrug = (id) => {
         return new Promise((resolve, reject) => {
-<<<<<<< HEAD
-            DrugModal.find({ drugID: id }).exec().then((drug) => {
-=======
             DrugModal.find({drugID: id }).exec().then((drug) => {
->>>>>>> e5b72e6ebe68b2e9cb8fe18034ad641485a329db
                 resolve({ status: 200, data: drug });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });
@@ -56,11 +52,7 @@ var DrugController = function () {
 
     this.DeleteADrug = (id) => {
         return new Promise((resolve, reject) => {
-<<<<<<< HEAD
             DrugModal.remove({_id: id }).then(() => {
-=======
-            DrugModal.remove({drugID:id }).then(() => {
->>>>>>> e5b72e6ebe68b2e9cb8fe18034ad641485a329db
                 resolve({ status: 200, message: "Successfullt deleted the drug" });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });
