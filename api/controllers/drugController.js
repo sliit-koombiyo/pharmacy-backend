@@ -5,7 +5,6 @@ var DrugController = function () {
         return new Promise((resolve, reject) => {
             var drug = new DrugModal({
                 drugID: data.drugID,
-                supplier: data.supplier,
                 name: data.name,
                 stock: data.stock,
                 type: data.type,
@@ -13,7 +12,7 @@ var DrugController = function () {
                 dangerlevel: data.dangerlevel,
                 reorderLevel: data.reorderLevel
             });
-            drug.save().then(() => {
+            DrugModal.create(drug).then(() => {
                 resolve({ status: 200, message: "Succesfully added new drug" });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });
@@ -23,7 +22,7 @@ var DrugController = function () {
 
     this.UpdateDrug = (id, data) => {
         return new Promise((resolve, reject) => {
-            DrugModal.update({drugID: id }, data).then(() => {
+            DrugModal.update({ drugID: id }, data).then(() => {
                 resolve({ status: 200, message: "succesfully updated the drug" });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });
@@ -53,7 +52,7 @@ var DrugController = function () {
 
     this.DeleteADrug = (id) => {
         return new Promise((resolve, reject) => {
-            DrugModal.remove({drugID:id }).then(() => {
+            DrugModal.remove({_id: id }).then(() => {
                 resolve({ status: 200, message: "Successfullt deleted the drug" });
             }).catch(err => {
                 reject({ status: 500, message: "Error:- " + err });

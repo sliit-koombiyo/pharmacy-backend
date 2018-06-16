@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const DrugBatchSchema= new Schema({
    batchID:Number,
-   drug:[Schema.Types.ObjectId],
+   drugID:Number,
    expiryDate:Date,
    batchQuntity:Number
 });
