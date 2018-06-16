@@ -1,11 +1,14 @@
 const router = require('express').Router();
-
+const authenticator = require('../helpers/authchecker').authenticator;
 const prescriptions = require('./prescriptions');
 const drugs = require('./drugs');
 const grn =require('./goodReceivedNotes');
 const orders= require('./orders');
 const requests=require('./requests');
 const drugBatch = require('./drugBatch');
+
+// use the auth middleware to check for jwt token
+router.use(authenticator);
 
 router.use('/prescriptions', prescriptions);
 router.use('/drugs', drugs);
