@@ -8,7 +8,7 @@ const requests=require('./requests');
 const drugBatch = require('./drugBatch');
 
 // use the auth middleware to check for jwt token
-router.use(authenticator);
+// router.use(authenticator);
 
 router.use('/prescriptions', prescriptions);
 router.use('/drugs', drugs);
